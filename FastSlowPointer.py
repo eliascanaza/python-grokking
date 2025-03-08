@@ -35,12 +35,25 @@ class FastSlowPointer:
 
         return False
 
+    def get_middle_node(_self, head):
+        slow = head
+        fast = head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return slow.data
+
 fastSlowPointer = FastSlowPointer()
 
 #print(fastSlowPointer.happyNumber(40))
 
 input_linked_list = LinkedList()
-input_linked_list.create_linked_list([2,4,6,8,10])
+input_linked_list.create_linked_list([1,2,3,4,5,6])
 list = input_linked_list.head
 
-print(fastSlowPointer.detect_cycle(input_linked_list.head))
+print(fastSlowPointer.get_middle_node(list))
+#print(fastSlowPointer.detect_cycle(input_linked_list.head))
+
+
