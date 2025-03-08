@@ -1,3 +1,5 @@
+from linked_list import LinkedList
+
 class FastSlowPointer:
     def happyNumber(_self, number):
         sum = number
@@ -20,6 +22,25 @@ class FastSlowPointer:
 
         return True
     
+    def detect_cycle(_self, head):
+        slow = head
+        fast = head
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                return True
+
+        return False
+
 fastSlowPointer = FastSlowPointer()
 
-print(fastSlowPointer.happyNumber(40))
+#print(fastSlowPointer.happyNumber(40))
+
+input_linked_list = LinkedList()
+input_linked_list.create_linked_list([2,4,6,8,10])
+list = input_linked_list.head
+
+print(fastSlowPointer.detect_cycle(input_linked_list.head))
