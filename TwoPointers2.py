@@ -139,6 +139,26 @@ class TwoPointer:
             tmp_right -= 1
         
         return word
+
+    def valid_word_abbreviation(_self, word, abbr):
+        abbr_init = 0
+        word_init = 0
+
+        while abbr_init < len(abbr):
+            num = abbr[abbr_init]
+            if num.isdigit():
+                print(abbr[abbr_init])
+                
+                word_init = abbr_init + num
+                
+                
+                    
+                abbr_init += 1
+            else:
+                word_init += 1
+                abbr_init += 1
+
+        return True
 #print(TwoPointer.is_palindrome('abababa'))
 #print(TwoPointer.three_sum([-4,-2,-2,-2,0,2,2,2,4]))
 
@@ -152,5 +172,7 @@ class TwoPointer:
 #print(TwoPointer.sort_colors([1,1,0,2,0]))
 
 twoPointer = TwoPointer()
+print(twoPointer.valid_word_abbreviation("elias", "e2as"))
 
-print(twoPointer.reverse_words("Elias como estas"))
+#print(twoPointer.reverse_words("Elias como estas"))
+

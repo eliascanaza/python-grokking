@@ -45,15 +45,28 @@ class FastSlowPointer:
 
         return slow.data
 
+    def find_duplicate(_self, nums):
+        slow = fast = nums[0]
+
+        while True:
+            slow = nums[slow]
+            fast = nums[nums[fast]]
+
+            if slow == fast:
+                break
+        print(slow,"-",fast)
+        return 0
+
 fastSlowPointer = FastSlowPointer()
 
 #print(fastSlowPointer.happyNumber(40))
 
-input_linked_list = LinkedList()
-input_linked_list.create_linked_list([1,2,3,4,5,6])
-list = input_linked_list.head
+#input_linked_list = LinkedList()
+#input_linked_list.create_linked_list([1,2,3,4,5,6])
+#list = input_linked_list.head
 
-print(fastSlowPointer.get_middle_node(list))
+#print(fastSlowPointer.get_middle_node(list))
 #print(fastSlowPointer.detect_cycle(input_linked_list.head))
+print(fastSlowPointer.find_duplicate([4,5,6,1,3,7,54]))
 
 
