@@ -1,0 +1,52 @@
+from Node import Node
+
+class BinaryTree:
+    def __init__(self):
+        self.root = None
+    
+    def insertArray(self, arr):
+        if not arr:
+            return
+
+        if not self.root:
+            self.root = Node(arr[0])
+
+        queue = []
+        queue.append(self.root)
+
+        i = 1
+
+        while queue and i < len(arr):
+            current = queue.pop(0)
+
+            if i < len(arr):
+                current.left = Node(arr[i])
+                queue.append(current.left)
+                i += 1
+
+            if i < len(arr):
+                current.right = Node(arr[i])
+                queue.append(current.right)
+                i += 1
+        
+    def level_order_traverse (self):
+        result = []
+
+        if not self.root:
+            return result
+        
+        queue = []
+        queue.append(self.root)
+
+        while queue:
+            current = queue.pop(0)
+            result.append(current.value)
+
+            if current.left:
+                queue.append(current.left)
+            
+            if current.right:
+                queue.append(current.right)
+            
+        return result
+        
