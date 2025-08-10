@@ -40,7 +40,7 @@ class BinaryTree:
 
         while queue:
             current = queue.pop(0)
-            result.append(current.value)
+            result.append(current)
 
             if current.left:
                 queue.append(current.left)
@@ -50,3 +50,5 @@ class BinaryTree:
             
         return result
         
+    def get_root(self):
+        return self.root

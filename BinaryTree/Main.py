@@ -1,9 +1,15 @@
 from BinaryTree import BinaryTree
+from OperationNode import Utilities
 
-arr = [4,3,-5,3,6,12]
+arr = [5,2,5,7,1,9,6]
+arr2 = [5,2,5,7,1,9,6]
 
 bt = BinaryTree()
-bt.insertArray(arr)
-result = bt.level_order_traverse()
+bt2 = BinaryTree()
 
-print(result)
+util = Utilities()
+
+bt.insertArray(arr)
+bt2.insertArray(arr2)
+
+print(util.isSimilar(bt.get_root(), bt2.get_root()))
