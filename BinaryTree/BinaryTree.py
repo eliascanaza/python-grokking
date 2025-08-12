@@ -29,26 +29,5 @@ class BinaryTree:
                 queue.append(current.right)
                 i += 1
         
-    def level_order_traverse (self):
-        result = []
-
-        if not self.root:
-            return result
-        
-        queue = []
-        queue.append(self.root)
-
-        while queue:
-            current = queue.pop(0)
-            result.append(current)
-
-            if current.left:
-                queue.append(current.left)
-            
-            if current.right:
-                queue.append(current.right)
-            
-        return result
-        
     def get_root(self):
         return self.root
