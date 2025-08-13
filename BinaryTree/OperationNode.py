@@ -1,7 +1,7 @@
 from Node import Node
 
 class Utilities:
-    def isSimilar(self, first: Node, second: Node):
+    def isSimilar (self, first: Node, second: Node):
         if not first and not second:
             return True
         
@@ -10,7 +10,7 @@ class Utilities:
         
         return False
     
-    def revertNode(self, root):
+    def revertNode (self, root):
         if not root:
             return root
         
@@ -23,7 +23,7 @@ class Utilities:
     
     def level_order_traverse (self, node: Node):
         result = []
-        
+
         if not node:
             return
 
@@ -42,11 +42,17 @@ class Utilities:
 
         return result
         
-    def in_order_traversal(self, root: Node):
+    def in_order_traversal (self, node: Node):
         result = []
+
+        if node:
+            result = self.in_order_traversal(node.left)
+            result.append(node.value)
+            result += self.in_order_traversal(node.right)
+
         return result
     
-    def post_order_traversal(self, root: Node):
+    def post_order_traversal (self, root: Node):
         result = []
         return result
     
