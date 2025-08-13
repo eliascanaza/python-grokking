@@ -21,6 +21,7 @@ class Utilities:
 
         return root
     
+    # Level by Level
     def level_order_traverse (self, node: Node):
         result = []
 
@@ -42,20 +43,27 @@ class Utilities:
 
         return result
         
+    # Left -> Root -> Right
     def in_order_traversal (self, node: Node):
         result = []
-
+        
         if node:
             result = self.in_order_traversal(node.left)
             result.append(node.value)
             result += self.in_order_traversal(node.right)
-
         return result
     
-    def post_order_traversal (self, root: Node):
+    # Left -> Right -> Root
+    def post_order_traversal (self, node: Node):
         result = []
+
+        if node:
+            result = self.post_order_traversal(node.left)
+            result += self.post_order_traversal(node.right)
+            result.append(node.value)
         return result
     
-    def pre_order_traversal (self, root: Node):
+    # Root -> Left -> Right
+    def pre_order_traversal (self, node: Node):
         result = []
         return result

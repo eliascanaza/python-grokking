@@ -21,9 +21,9 @@ print("Nodes 2: ", arr2)
 
 print()
 print("Level Order Traversal: ", util.level_order_traverse(bt.get_root()))
-print("In Order Traversal: ", util.in_order_traversal(bt2.get_root()))
-print("Pre Order Traversal: ", util.pre_order_traversal(bt2.get_root()))
-print("Post Order Traversal: ", util.post_order_traversal(bt2.get_root()))
+print("In Order Traversal: ", util.in_order_traversal(bt.get_root()))
+print("Pre Order Traversal: ", util.pre_order_traversal(bt.get_root()))
+print("Post Order Traversal: ", util.post_order_traversal(bt.get_root()))
 
 # Operations
 
