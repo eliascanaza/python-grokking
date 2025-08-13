@@ -29,3 +29,4 @@ print("Post Order Traversal: ", util.post_order_traversal(bt.get_root()))
 
 print()
 print("Similars: ", util.isSimilar(bt.get_root(), bt2.get_root()))
+print("Inverse Node 1: ", util.level_order_traverse(util.revertNode(bt.get_root())))
