@@ -66,4 +66,9 @@ class Utilities:
     # Root -> Left -> Right
     def pre_order_traversal (self, node: Node):
         result = []
+
+        if node:
+            result.append(node.value)
+            result += self.pre_order_traversal(node.left)
+            result += self.pre_order_traversal(node.right)
         return result
