@@ -21,23 +21,35 @@ class Utilities:
 
         return root
     
-    def level_order_traverse (self, root: Node):
+    def level_order_traverse (self, node: Node):
         result = []
-
-        if not root:
-            return result
         
+        if not node:
+            return
+
         queue = []
-        queue.append(root)
+        queue.append(node)
 
         while queue:
-            current = queue.pop(0)
-            result.append(current.value)
+            currentNode = queue.pop(0)
+            result.append(currentNode.value)
 
-            if current.left:
-                queue.append(current.left)
-            
-            if current.right:
-                queue.append(current.right)
-            
+            if currentNode.left:
+                queue.append(currentNode.left)
+
+            if currentNode.right:
+                queue.append(currentNode.right)
+
+        return result
+        
+    def in_order_traversal(self, root: Node):
+        result = []
+        return result
+    
+    def post_order_traversal(self, root: Node):
+        result = []
+        return result
+    
+    def pre_order_traversal (self, root: Node):
+        result = []
         return result
