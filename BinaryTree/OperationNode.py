@@ -1,7 +1,7 @@
-from Node import Node
+from TreeNodeObject import TreeNode
 
 class Utilities:
-    def isSimilar (self, first: Node, second: Node):
+    def isSimilar (self, first: TreeNode, second: TreeNode):
         if not first and not second:
             return True
         
@@ -22,7 +22,7 @@ class Utilities:
         return root
     
     # Level by Level
-    def level_order_traverse (self, node: Node):
+    def level_order_traverse (self, node: TreeNode):
         result = []
 
         if not node:
@@ -44,7 +44,7 @@ class Utilities:
         return result
         
     # Left -> Root -> Right
-    def in_order_traversal (self, node: Node):
+    def in_order_traversal (self, node: TreeNode):
         result = []
         
         if node:
@@ -54,7 +54,7 @@ class Utilities:
         return result
     
     # Left -> Right -> Root
-    def post_order_traversal (self, node: Node):
+    def post_order_traversal (self, node: TreeNode):
         result = []
 
         if node:
@@ -64,11 +64,49 @@ class Utilities:
         return result
     
     # Root -> Left -> Right
-    def pre_order_traversal (self, node: Node):
+    def pre_order_traversal (self, node: TreeNode):
         result = []
 
         if node:
             result.append(node.value)
             result += self.pre_order_traversal(node.left)
             result += self.pre_order_traversal(node.right)
+        return result
+    
+    def sum_left_leaves(self, node: TreeNode):
+        sum = 0
+        return sum
+
+    def num_levels (self, node: TreeNode):
+        if node is None:
+            return 1
+        
+        levels_left = 0
+        levels_right = 0
+
+        return max(levels_left, levels_right)
+
+    def level_order_traversal(self, node: TreeNode):
+        if not node:
+            return 
+        
+        queue = [node]
+        result = []
+
+        while queue:
+            queue_size = len(queue)
+            level = []
+
+            for i in range(queue_size):
+                current_node = queue.pop(0)
+                level.append(current_node.value)
+
+                if current_node.left:
+                    queue.append(current_node.left)
+
+                if current_node.right:
+                    queue.append(current_node.right)
+
+            result.append(level)
+
         return result

@@ -1,4 +1,4 @@
-from Node import Node
+from TreeNodeObject import TreeNode
 
 class BinaryTree:
     def __init__(self):
@@ -9,7 +9,7 @@ class BinaryTree:
             return
 
         if not self.root:
-            self.root = Node(arr[0])
+            self.root = TreeNode(arr[0])
 
         queue = []
         queue.append(self.root)
@@ -20,12 +20,12 @@ class BinaryTree:
             current = queue.pop(0)
 
             if i < len(arr):
-                current.left = Node(arr[i])
+                current.left = TreeNode(arr[i])
                 queue.append(current.left)
                 i += 1
 
             if i < len(arr):
-                current.right = Node(arr[i])
+                current.right = TreeNode(arr[i])
                 queue.append(current.right)
                 i += 1
         
