@@ -1,3 +1,4 @@
+from typing import Optional
 from TreeNodeObject import TreeNode
 
 class Utilities:
@@ -110,3 +111,25 @@ class Utilities:
             result.append(level)
 
         return result
+    
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return False
+        
+        if not root.left and not root.right:
+            return True
+        
+        def compare_tree(left: TreeNode, right: TreeNode):
+            if not left and not right:
+                return True
+            
+            if not left or not right:
+                return False
+            
+            if not left or not right or left.value != right.value:
+                return False
+
+            return compare_tree(left.left, right.right) and compare_tree(left.right, right.left)
+
+        return  compare_tree(root.left, root.right)
+        
