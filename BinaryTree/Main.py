@@ -3,7 +3,7 @@ from OperationNode import Utilities
 
 # Values
 
-arr = [5,2,15,7,1,9,6,18]
+arr = [5,2,15,7,1,9,6,18,40,33,52,65]
 arr2 = [5,2,15,7,1,9,6]
 
 bt = BinaryTree()
@@ -27,6 +27,7 @@ print("Level Order Traversal Array: ", util.level_order_traversal(bt.get_root())
 print("In Order Traversal: ", util.in_order_traversal(bt.get_root()))
 print("Pre Order Traversal: ", util.pre_order_traversal(bt.get_root()))
 print("Post Order Traversal: ", util.post_order_traversal(bt.get_root()))
+print("ZigZag Order: ", util.zigzag_level_order(bt.get_root()))
 
 # Operations
 

@@ -133,3 +133,33 @@ class Utilities:
 
         return  compare_tree(root.left, root.right)
         
+    def zigzag_level_order(self, root: Optional[TreeNode]) -> bool:
+        if not root:
+            return
+        
+        queue = [root]
+        result = []
+        zigzag = False
+
+        while queue:
+            levels = []
+            len_nodes = len(queue)
+
+            for i in range(len_nodes):
+                node = queue.pop(0)
+
+                if zigzag:
+                    levels.insert(0, node.value)
+                else:
+                    levels.append(node.value)
+
+                if node.left:
+                    queue.append(node.left)
+
+                if node.right:
+                    queue.append(node.right)
+            
+            zigzag = not zigzag
+            result.append(levels)
+
+        return result
