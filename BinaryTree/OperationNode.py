@@ -1,5 +1,6 @@
 from typing import Optional
 from TreeNodeObject import TreeNode
+from collections import deque
 
 class Utilities:
     def isSimilar (self, first: TreeNode, second: TreeNode):
@@ -163,3 +164,29 @@ class Utilities:
             result.append(levels)
 
         return result
+
+    def find_target(self, root: TreeNode, k):
+        if not root:
+            return
+        
+        queue = deque([root])
+        seen = []
+
+        while queue:
+            node = queue.popleft()
+            num = node.value
+            rest = int(k - num)
+
+            if rest in seen:
+                return True
+            else:
+                seen.append(num)
+
+            if node.left:
+                queue.append(node.left)
+            
+            if node.right:
+                queue.append(node.right)
+
+        return False
+    
