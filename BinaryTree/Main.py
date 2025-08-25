@@ -33,7 +33,7 @@ print("ZigZag Order: ", util.zigzag_level_order(bt.get_root()))
 
 print()
 print("Max Depth BFS: ", util.max_depth_bfs(bt.get_root()))
-print("Max Depth BFS: ", util.max_depth_bfs(bt.get_root()))
+print("Max Depth BFS Recursive: ", util.max_depth_recursive(bt.get_root()))
 print("Similars: ", util.isSimilar(bt.get_root(), bt2.get_root()))
 print("Inverse Node 1: ", util.level_order_traverse(util.revertNode(bt.get_root())))
 print("Num Levels: ", util.num_levels(bt.get_root()))

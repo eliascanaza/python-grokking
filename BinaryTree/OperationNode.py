@@ -209,3 +209,9 @@ class Utilities:
             level += 1
         
         return level
+    
+    def max_depth_recursive (self, root: TreeNode):
+        if not root:
+            return 0
+        
+        return 1 + max(self.max_depth_recursive(root.left), self.max_depth_recursive(root.right))
