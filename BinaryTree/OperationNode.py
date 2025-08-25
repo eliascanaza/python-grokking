@@ -190,3 +190,22 @@ class Utilities:
 
         return False
     
+    def max_depth_bfs (self, root: TreeNode):
+        if not root:
+            return 0
+        
+        queue = [root]
+        level = 0
+
+        while queue:
+            for i in range(len(queue)):
+                current = queue.pop(0)
+
+                if current.left:
+                    queue.append(current.left)
+                
+                if current.right:
+                    queue.append(current.right)
+            level += 1
+        
+        return level
