@@ -1,3 +1,4 @@
+import math
 from typing import List
 
 
@@ -32,4 +33,23 @@ class Solution:
                 top = mid - 1
         
         return False
+
+    def minEatingSpeed(self, piles: List[int], h: int) -> int:
+        minSpeed, maxSpeed = 1, max(piles)
+        res = maxSpeed
+
+        while minSpeed <= maxSpeed:
+            mid = (minSpeed + maxSpeed) // 2
+            hours = 0
+            for pile in piles:
+                hours += math.ceil(pile/mid)
+
+            if hours <= h:
+                res = min(hours, res)
+                maxSpeed = mid - 1
+            else:
+                minSpeed = mid + 1
         
+        return minSpeed
+
+

@@ -16,3 +16,8 @@ print("Find: ", target2, ", Result: ", sol.searchMatrix(matrix2, target2))
 
 print("Search 2D Matrix: ", matrix2)
 print("Find: ", 1000, ", Result: ", sol.searchMatrix(matrix2, 1000))
+
+print()
+print("Min eating Bananas")
+print(sol.minEatingSpeed([3,1,5,6,8,10], 10))
+print(sol.minEatingSpeed([1,4,3,2], 9))
