@@ -21,3 +21,8 @@ print()
 print("Min eating Bananas")
 print(sol.minEatingSpeed([3,1,5,6,8,10], 10))
 print(sol.minEatingSpeed([1,4,3,2], 9))
+
+print()
+print("Min Element: ", sol.search([4,5,6,7,0,1,2], 0))
+print("Min Element: ", sol.search([4,5,0,1,2], 10))
+print("Min Element: ", sol.search([0,1,2], 0))

@@ -52,4 +52,35 @@ class Solution:
         
         return minSpeed
 
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums) - 1
 
+        while l < r:
+            m = (l + r) // 2
+            if nums[m] > nums[r]:
+                l = m + 1
+            else:
+                r = m
+        index = l
+
+        if index == 0:
+            l, r = 0, len(nums) - 1
+        
+        # Evaluating if this is in left side
+        elif target >= nums[0] and target <= nums[index - 1]:
+            l, r = 0, index - 1
+
+        # Evaluating if this is in right side
+        else:
+            l, r = index, len(nums) - 1
+        
+        while l <= r:
+            m = (l + r) // 2
+
+            if target == nums[m]:
+                return m
+            elif target > nums[m]:
+                l = m + 1
+            else: 
+                r = m - 1
+        return -1
