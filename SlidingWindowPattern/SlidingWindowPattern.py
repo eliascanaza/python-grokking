@@ -11,4 +11,14 @@ class SlidingWindow:
             best = max(best, windowSum)
 
         return best
+    
+    def allWindow(self, arr, k):
+        res = []
+        windowSum = sum(arr[:k])
+        res.append(windowSum)
 
+        for i in range(k, len(arr)):
+            windowSum += arr[i] - arr[i - k]
+            res.append(windowSum)
+
+        return res
