@@ -2,7 +2,7 @@ class BinarySearchPattern:
     def findElement(self, nums, target):
         start, end = 0, len (nums) - 1
 
-        while start < end:
+        while start <= end:
             middle = (start + end) // 2
             
             if nums[middle] == target:
