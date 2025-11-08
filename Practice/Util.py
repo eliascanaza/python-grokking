@@ -144,3 +144,58 @@ class Utilities:
             i += 1
 
         return final
+
+    def topKFrequent2(self, nums: List[int], k: int) -> List[int]:
+        map = {}
+        bucket = [[] for i in range(len(nums))]
+        res = []
+
+        for num in nums:
+            map[num] = map.get(num, 0) + 1
+        
+        
+        for num, count in map.items():
+            bucket[count].append(num)
+
+        
+        for index in range(len(bucket) - 1, 0, -1):
+            for num in bucket[index]:
+                if len(res) == k:
+                    return res
+                if num:
+                    res.append(num)
+        
+        return res
+
+    def encode(self, strs: List[str]) -> str:
+        res = ''
+
+        for word in strs:
+            res += str(len(word)) + '#' + word
+
+        return res
+
+    def decode(self, s: str) -> List[str]:
+        res = []
+
+        num = ''
+        index = 0
+        while index < len(s):
+            if s[index] == '#':
+                    index += 1
+                    lenght = int(num)
+                    k = 0
+                    word = ''
+
+                    while k < lenght:
+                        word += s[index]
+                        index += 1
+                        k += 1
+
+                    res.append(word)
+                    num = ''
+            else:
+                num += s[index]
+                index += 1
+
+        return res

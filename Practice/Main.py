@@ -66,5 +66,12 @@ util = Utilities()
 # amount = 12
 # print("Coin change: ", util.coinChange(coins, amount))
 
-nums = [1,2,2,3,3,3,4]
-util.topKFrequent(nums, 2)
+# nums = [1,2,2,3,3,3,4]
+# print(util.topKFrequent2(nums, 2))
+
+#words = ["neet","code","love","you"]
+words = ["we","say",":","yes","!@#$%^&*()"]
+print(words)
+encode = util.encode(words)
+print(encode)
+print(util.decode(encode))
