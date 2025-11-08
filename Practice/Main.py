@@ -52,12 +52,19 @@ util = Utilities()
 # print(nums)
 # print("Missing Number: ", util.missingNumber(nums))
 
-nums = [3,4,5,6,1,2]
-print("Find min number in rotated array: ", util.findMin(nums))
+# nums = [3,4,5,6,1,2]
+# print("Find min number in rotated array: ", util.findMin(nums))
 
 
-nums = [4,5,0,1,2,3]
-print("Find min number in rotated array: ", util.findMin(nums))
+# nums = [4,5,0,1,2,3]
+# print("Find min number in rotated array: ", util.findMin(nums))
 
-nums = [4,5,6,7]
-print("Find min number in rotated array: ", util.findMin(nums))
+# nums = [4,5,6,7]
+# print("Find min number in rotated array: ", util.findMin(nums))
+
+# coins = [1,5,10]
+# amount = 12
+# print("Coin change: ", util.coinChange(coins, amount))
+
+nums = [1,2,2,3,3,3,4]
+util.topKFrequent(nums, 2)

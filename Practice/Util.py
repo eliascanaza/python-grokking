@@ -1,4 +1,5 @@
 from typing import List
+from heapq import heapify
 
 
 class Utilities:
@@ -111,3 +112,35 @@ class Utilities:
 
         return nums[l]
     
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        dp = [amount + 1] * (amount + 1)
+        dp[0] = 0
+
+        for i in range(1, amount + 1):
+            for coin in coins:
+                if i - coin >= 0:
+                    dp[i] = min(dp[i], 1 + dp[i - coin])
+        return dp[amount] if dp[amount] != amount + 1 else -1
+
+    def removeDuplicates(self, nums: List[int]) -> int:
+        pass
+
+    def topKFrequent1(self, nums: List[int], k: int) -> List[int]:
+        res = {}
+
+        for num in nums:
+            res[num] = res.get(num, 0) + 1
+        
+        lst = []
+        for num, count in res.items():
+            lst.append([count,num])
+        
+        lst.sort(reverse=True)
+        
+        i = 0
+        final = []
+        while i < k:
+            final.append(lst[i][1])
+            i += 1
+
+        return final
