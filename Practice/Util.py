@@ -1,5 +1,6 @@
 from typing import List
 from heapq import heapify
+from collections import defaultdict
 
 
 class Utilities:
@@ -228,4 +229,14 @@ class Utilities:
                     stack.pop()
         return False if stack else True
 
-    
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        res = defaultdict(list)
+
+        for item in strs:
+            word = [0] * 26
+
+            for c in item:
+                word[ord(c) - ord('a')] += 1
+
+            res[tuple(word)].append(item)
+        return list(res.values())

@@ -81,5 +81,8 @@ util = Utilities()
 # nums = [0,3,2,5,4,6,1,1]
 # print(util.longestConsecutive(nums))
 
-s = "[]"
-print(util.isValid(s))
+# s = "[]"
+# print(util.isValid(s))
+
+strs = ["act","pots","tops","cat","stop","hat"]
+print(util.groupAnagrams(strs))
