@@ -199,3 +199,33 @@ class Utilities:
                 index += 1
 
         return res
+    
+    def isPalindrome(self, s: str) -> bool:
+        pass
+
+    def longestConsecutive(self, nums: List[int]) -> int:
+        lst = set(nums)
+
+        maxCount = 0
+        for num in lst:
+            if num - 1 is not lst:
+                count = 1
+                while num + count in lst:
+                    count += 1
+                maxCount = max(maxCount, count)
+        
+        return maxCount
+
+    def isValid(self, s: str) -> bool:
+        mapS = {")":"(","]":"[","}":"{"}
+        stack = []
+
+        for sing in s:
+            if sing not in mapS:
+                stack.append(sing)
+            else:
+                if mapS.get(sing) == stack[-1]:
+                    stack.pop()
+        return False if stack else True
+
+    

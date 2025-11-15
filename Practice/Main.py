@@ -70,8 +70,16 @@ util = Utilities()
 # print(util.topKFrequent2(nums, 2))
 
 #words = ["neet","code","love","you"]
-words = ["we","say",":","yes","!@#$%^&*()"]
-print(words)
-encode = util.encode(words)
-print(encode)
-print(util.decode(encode))
+# words = ["we","say",":","yes","!@#$%^&*()"]
+# print(words)
+# encode = util.encode(words)
+# print(encode)
+# print(util.decode(encode))
+# s = "Was it a car or a cat I saw?"
+# util.isPalindrome(s)
+
+# nums = [0,3,2,5,4,6,1,1]
+# print(util.longestConsecutive(nums))
+
+s = "[]"
+print(util.isValid(s))
