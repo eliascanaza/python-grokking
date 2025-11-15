@@ -75,8 +75,8 @@ util = Utilities()
 # encode = util.encode(words)
 # print(encode)
 # print(util.decode(encode))
-# s = "Was it a car or a cat I saw?"
-# util.isPalindrome(s)
+s = "A man, a plan, a canal: Panama"
+print(util.isPalindrome(s))
 
 # nums = [0,3,2,5,4,6,1,1]
 # print(util.longestConsecutive(nums))
@@ -84,5 +84,5 @@ util = Utilities()
 # s = "[]"
 # print(util.isValid(s))
 
-strs = ["act","pots","tops","cat","stop","hat"]
-print(util.groupAnagrams(strs))
+# strs = ["act","pots","tops","cat","stop","hat"]
+# print(util.groupAnagrams(strs))

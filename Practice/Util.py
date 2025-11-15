@@ -202,7 +202,25 @@ class Utilities:
         return res
     
     def isPalindrome(self, s: str) -> bool:
-        pass
+        l, r = 0, len(s) - 1
+
+        while l < r:
+            while not self.isAlpha(s[l]):
+                l += 1
+            while not self.isAlpha(s[r]):
+                r -= 1
+
+            if s[l].lower() != s[r].lower():
+                return False
+            l += 1
+            r -= 1
+
+        return True
+
+    def isAlpha(self, c):
+            return (ord('a') <= ord(c) <= ord('z') or 
+                    ord('A') <= ord(c) <= ord('Z') or 
+                    ord('0') <= ord(c) <= ord('9'))
 
     def longestConsecutive(self, nums: List[int]) -> int:
         lst = set(nums)
