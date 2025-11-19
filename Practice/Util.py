@@ -1,6 +1,6 @@
 from typing import List
 from heapq import heapify
-from collections import defaultdict
+from collections import defaultdict, deque
 
 
 class Utilities:
@@ -227,7 +227,7 @@ class Utilities:
 
         maxCount = 0
         for num in lst:
-            if num - 1 is not lst:
+            #if num - 1 is not lst:
                 count = 1
                 while num + count in lst:
                     count += 1
@@ -258,3 +258,65 @@ class Utilities:
 
             res[tuple(word)].append(item)
         return list(res.values())
+
+    def majorityElement(self, nums: List[int]) -> int:
+        l, r = 0, len(nums) - 1
+
+        while l <= r:
+            if nums.count(nums[l]) > (r // 2):
+                return nums[l]
+            l += 1
+        return 0
+    
+    def numIslands(self, grid: List[List[str]]) -> int:
+        visited = set()
+        islands = 0
+        rows, cols = len(grid), len(grid[0])
+
+        def bfs(r, c):
+            directions = [[1, 0],[0, 1],[0, -1],[-1, 0]]
+
+            q = deque()
+            q.append([r, c])
+            grid[r][c] = "0"
+
+            while q:
+                row, col = q.popleft()
+
+                for nr, nc in directions:
+                    r, c = row + nr, col + nc
+
+                    if 0 <= r < rows and 0 <= c < cols and grid[r][c] == "1" and grid[r][c] not in visited:
+                        q.append([r, c])
+                        grid[r][c] = "0"
+
+
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == "1" and grid[r][c] not in visited:
+                    islands += 1 
+                    bfs(r, c)
+        return islands
+
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        rows = defaultdict(set)
+        cols = defaultdict(set)
+        squares = defaultdict(set)
+
+        for r in range(9):
+            for c in range(9):
+                if board[r][c] == ".":
+                    continue
+
+                if (board[r][c] in rows[r] or
+                    board[r][c] in cols[c] or
+                    board[r][c] in squares[(r // 3, c // 3)]):
+                    return False
+                
+                rows[r].add(board[r][c])
+                cols[c].add(board[r][c])
+                squares[(r // 3,c // 3)].add(board[r][c])
+        
+        return True
+
+

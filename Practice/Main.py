@@ -17,7 +17,7 @@ util = Utilities()
 
 # print()
 
-# lst = [5,5]
+# lst = [5,15,4,3,5,1]
 # k = 10
 # print("Find two sum: ", util.twoSum(lst, k))
 
@@ -75,10 +75,10 @@ util = Utilities()
 # encode = util.encode(words)
 # print(encode)
 # print(util.decode(encode))
-s = "A man, a plan, a canal: Panama"
-print(util.isPalindrome(s))
+# s = "A man, a plan, a canal: Panama"
+# print(util.isPalindrome(s))
 
-# nums = [0,3,2,5,4,6,1,1]
+# nums = [0,3,8,7,2,5,4,6,1,1]
 # print(util.longestConsecutive(nums))
 
 # s = "[]"
@@ -86,3 +86,25 @@ print(util.isPalindrome(s))
 
 # strs = ["act","pots","tops","cat","stop","hat"]
 # print(util.groupAnagrams(strs))
+
+# nums = [2,2,1,1,1,2,2]
+# print(util.majorityElement(nums))
+
+# grid = [
+#   ["1","1","0","0","1"],
+#   ["1","1","0","0","0"],
+#   ["0","0","1","0","0"],
+#   ["1","0","0","1","1"]
+# ]
+# print(util.numIslands(grid))
+
+board = [["1","2",".",".","3",".",".",".","."],
+ ["4",".",".","5",".",".",".",".","."],
+ [".","9","8",".",".",".",".",".","3"],
+ ["5",".",".",".","6",".",".",".","4"],
+ [".",".",".","8",".","3",".",".","5"],
+ ["7",".",".",".","2",".",".",".","6"],
+ [".",".",".",".",".",".","2",".","."],
+ [".",".",".","4","1","9",".",".","8"],
+ [".",".",".",".","8",".",".","7","9"]]
+print(util.isValidSudoku(board))
